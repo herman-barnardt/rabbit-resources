@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - "11"
+dist: trusty
+sudo: required
+
+install:
+  - export PREV_VERSION=`./vnum.pl 1`
+  - export BUILD_VERSION=`./vnum.pl 0`
+  - export PREV_PROD_VERSION=`./vnum.pl 3`
+  - export BUILD_PROD_VERSION=`./vnum.pl 2`
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+- ng lint
+- ng test
+
+after_success:
+- git config user.name "Travis"
+- git config user.email "hmbarnardt@gmail.com"
+- git config push.default simple
+- if [ "$TRAVIS_BRANCH" == "staging" ]; then git tag $BUILD_VERSION; git push --tags; fi
+- if [ "$TRAVIS_BRANCH" == "master" ]; then git tag $BUILD_PROD_VERSION; git push --tags; fi
