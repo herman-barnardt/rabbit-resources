@@ -1,0 +1,9 @@
+.sidenav-container {
+  height: 100%;
+  background: none;
+}
+
+.sidenav {
+  width: 225px;
+  padding-top: 10px;
+}

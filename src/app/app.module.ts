@@ -6,22 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
-import { MaterialModule } from './modules/material.module';
-
 import { environment } from '../environments/environment';
 
+import { MaterialModule } from './modules/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FirebaseModule } from './modules/firebase.module';
 
 import { AuthenticationService } from './services/authentication/authentication.service';
-
 import { EmployeeService } from './services/employees/employee.service';
+
 import { EmployeesComponent } from './components/employees/employees.component';
-import { FirebaseModule } from './modules/firebase.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeesComponent
+    EmployeesComponent,
   ],
   imports: [
     BrowserModule,

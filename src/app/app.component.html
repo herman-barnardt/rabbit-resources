@@ -1,4 +1,9 @@
-<mat-toolbar color="primary">Rabbit Resources
+<mat-toolbar color="primary">
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    Rabbit Resources
     <span fxFlex></span>
     <div *ngIf="user">
         <button mat-button [matMenuTriggerFor]="userMenu">
@@ -16,4 +21,29 @@
         </button>
     </div>
 </mat-toolbar>
-<router-outlet></router-outlet>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+        <mat-nav-list>
+            <a mat-list-item routerLink="/employees">
+                <mat-icon class="navicon">contacts</mat-icon>
+                Employees
+            </a>
+            <a mat-list-item routerLink="/leave">
+                <mat-icon class="navicon">event</mat-icon>
+                Leave
+            </a>
+            <a mat-list-item routerLink="/time-sheets">
+                <mat-icon class="navicon">date_range</mat-icon>
+                Time sheets
+            </a>
+            <a mat-list-item routerLink="/lunch">
+                <mat-icon class="navicon">restaurant</mat-icon>
+                Lunch
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
