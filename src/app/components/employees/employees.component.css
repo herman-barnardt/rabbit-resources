@@ -1,0 +1,33 @@
+.card {
+    margin: 16px;
+}
+
+table {
+    width: 100%;
+}
+
+mat-icon.search-icon {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+/* Material Table Search */
+input.table-search-input {
+    margin-left: 8px;
+    margin-top: 1px;
+}
+
+input.table-search-input::placeholder {
+    color: rgba(255,255,255,0.7); /* Chrome, Firefox, Opera, Safari 10.1+ */
+    opacity: 1;                     /* Firefox */
+}
+
+input.table-search-input:-ms-input-placeholder {
+    color: rgba(255,255,255,0.7); /* Internet Explorer 10-11 */
+}
+
+input.table-search-input::-ms-input-placeholder {
+    color: rgba(255,255,255,0.7); /* Microsoft Edge */
+}
