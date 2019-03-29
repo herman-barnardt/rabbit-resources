@@ -24,8 +24,7 @@ install:
   - export BUILD_PROD_VERSION=`./vnum.pl 2`
 
   - npm install -g @angular/cli
-  - npm install -g @angular/fire
-  - npm install -g firebase
+  - npm install -g @angular/fire firebase
   - npm install
 
 script:
