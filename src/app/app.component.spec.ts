@@ -32,9 +32,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Retro Rabbit Resources'`, () => {
+  it(`should have as title 'Rabbit Resources'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Retro Rabbit Resources');
+    expect(app.title).toEqual('Rabbit Resources');
   });
 });
