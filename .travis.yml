@@ -30,7 +30,7 @@ script:
 - openssl aes256 -md md5 -d -in src/environments/environment.ts.enc -out src/environments/environment.ts -pass pass:$config_pwd
 - openssl aes256 -md md5 -d -in src/environments/environment.prod.ts.enc -out src/environments/environment.prod.ts -pass pass:$config_pwd
 - ng lint
-- ng test
+- ng test --watch=false
 
 after_success:
 - git config user.name "Travis"
