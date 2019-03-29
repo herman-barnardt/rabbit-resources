@@ -16,11 +16,17 @@ import { AuthenticationService } from './services/authentication/authentication.
 import { EmployeeService } from './services/employees/employee.service';
 
 import { EmployeesComponent } from './components/employees/employees.component';
+import { LeaveComponent } from './components/leave/leave.component';
+import { LunchComponent } from './components/lunch/lunch.component';
+import { TimeSheetsComponent } from './components/time-sheets/time-sheets.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeesComponent,
+    LeaveComponent,
+    LunchComponent,
+    TimeSheetsComponent,
   ],
   imports: [
     BrowserModule,
