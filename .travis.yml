@@ -25,6 +25,7 @@ install:
 
   - npm install -g @angular/cli
   - npm install -g @angular/fire firebase
+  - npm i -g firebase-tools
   - npm install
 
 script:
